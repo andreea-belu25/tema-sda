@@ -7,11 +7,11 @@ TCoada* InitQ(void)
     c=(TCoada*)malloc(sizeof(TCelulaCoada));
     if(!c)
         return NULL;
-    c->inc = NULL; 
-    c->sf = NULL;
+    (*c)->inc = NULL; 
+    (*c)->sf = NULL;
     return c;
 }
-
+//test
 //inserare in coada
 int InsQ(TCoada *c, int x)
 {
