@@ -39,7 +39,7 @@ TL2 AlocCelula(char elem) {
     TL2 aux = (TL2)malloc(sizeof(TCelula2));   // alocare */
     if(aux == NULL) 
          return NULL; // returnez NULL
-    aux->info = elem;
+    aux->info = elem;///
     aux->pre = NULL;
     aux->urm = NULL;
     return aux;  //returnez adresa 

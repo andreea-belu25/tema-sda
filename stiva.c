@@ -1,13 +1,5 @@
 #include "header.h"
 
-//initializare stiva
-TStiva InitS(void)
-{
-    TStiva vf;
-    vf->info = NULL;
-    vf->urm = NULL;
-}
-
 //inserare in stiva
 int Push(TStiva* vf, char* x)
 {
@@ -26,8 +18,8 @@ int Pop(TStiva* vf, char *ax)
     TStiva aux;
     if(*vf == NULL)
         return 0;
-    strcpy(*ax, (*vf)->info);
-    aux = vf;
+    strcpy(ax, (*vf)->info); // e deja char pointer, daca dereferentiezi e doar primu character din sir
+    aux = *vf;
     *vf = aux->urm;
     free(aux);
     return 1;

@@ -11,15 +11,15 @@ typedef struct celula2
 //implementare stiva
 typedef struct celst
 {
-    char info[256];
+    char *info; //aici o sa iti trebuiasca pointer in loc de char, dar cand ajungi la undo o sa vezi
     struct celst *urm;
 }TCelulaStiva, *TStiva;
 
 //definire lista simplu inlantuita pentru coada
 typedef struct celula
 {
-    struct coada *urm;
-    char info[256];
+    struct celula *urm;
+    char *info; //fa-le si tu char pointer sa nu mai fi restrictionata la cate charactere pui in el, ca oricum aloci dinamic
 }TCelula, *TLista;
 
 //implementare coada
@@ -37,6 +37,6 @@ int Push(TStiva* vf, char* x);
 int Pop(TStiva* vf, char *ax);
 void DistrugeS(TStiva *vf);
 TCoada* InitQ(void);
-int InsQ(TCoada *c, int x);
+int InsQ(TCoada *c, char *x);
 int ExtQ(TCoada *c, char *x);
 void DistrQ(TCoada **c);
